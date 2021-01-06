@@ -23,7 +23,7 @@ export class WorkSkillsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(event){
+  onClick(event:any){
     let selected:Skill= {} as Skill;
     this.skills=this.skills.map((s)=>{
       if(s.name==event.target.innerHTML.trim()){
