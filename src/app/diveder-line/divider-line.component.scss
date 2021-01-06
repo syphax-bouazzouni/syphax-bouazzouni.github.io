@@ -1,0 +1,43 @@
+@import "src/app/vars";
+@import "src/app/animations";
+
+:host{
+  display: block;
+  width: 100%;
+}
+.divider-underlines{
+  width: 98%;
+  margin: 0 auto;
+  @extend .divider-animation;
+  &::before{
+    @extend .divider-underlines-line;
+    margin-bottom: 2px;
+    right: 1rem;
+  }
+  &::after{
+    @extend .divider-underlines-line;
+    left: 1rem;
+  }
+
+  &:hover{
+    &::before{
+      right: -1rem ;
+    }
+    &::after{
+
+      left: -1rem;
+    }
+  }
+}
+
+.divider-underlines-line{
+  transition: 0.3s all ease-in-out;
+  content:'';
+  display: block;
+  position: relative;
+  border: 1px solid $color1;
+  width: 100%;
+}
+.divider-animation{
+  animation: 1s ease-in-out 1s both dropIn;
+}

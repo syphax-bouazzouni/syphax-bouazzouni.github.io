@@ -1,0 +1,46 @@
+
+$bg-color: #17a598;
+$color1: #e74c3c;
+$color2: #2c3e50;
+$color3: #db381b;
+$green: #17a598;
+$text-color: #ffffff;
+$black: #555;
+$off-white: #f8f8f8;
+$white: #fff;
+
+
+$break-point : 460px;
+$break-point-middle:820px;
+$small-width:90vw;
+$small-min-width:300px;
+
+.about-me-width{
+  width: 40vw;
+  min-width: 300px;
+}
+
+.about-me-width-small{
+
+}
+
+.about-me-part{
+  margin: 2rem auto;
+  color: $off-white;
+  @extend .about-me-width;
+  h1{
+    @extend .about-me-part-title;
+  }
+}
+
+
+.about-me-part-title{
+  margin: 2rem 0 3rem;
+  letter-spacing: 2px;
+  padding-bottom: 0;
+  font-size: 3.2rem;
+  font-family: 'Cormorant Garamond',serif;
+  border-bottom: 3px solid $off-white;
+}
+
+

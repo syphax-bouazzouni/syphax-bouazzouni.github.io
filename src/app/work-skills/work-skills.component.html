@@ -1,0 +1,8 @@
+<div class="works-filters">
+  <div *ngFor="let s of skills"
+       (click)="onClick($event)"
+  [class.works-filter-disabled]="s.disabled">
+    {{s.name}}
+  </div>
+
+</div>

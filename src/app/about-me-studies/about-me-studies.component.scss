@@ -1,0 +1,89 @@
+@import "../vars";
+
+:host{
+  width: 100%;
+}
+
+.about-me-studies{
+  @extend .about-me-part;
+  .about-me-study{
+    h2{
+      margin: 2rem 0 1rem;
+      letter-spacing: 2px;
+      padding-bottom: 0;
+      font-size: 1.6rem;
+      border-bottom: 2px solid $off-white;
+      width: 75%;
+    }
+    .about-me-study-body {
+      display:flex;
+      background-color: $color1;
+      border-radius: 2rem;
+
+      margin: 2rem;
+      position: relative;
+      .about-me-study-logo{
+        margin: 0 1rem;
+        position: absolute;
+        top: -1rem;
+        left: -3rem;
+      }
+      .about-me-study-description{
+        flex-grow: 2;
+        padding: 2rem 2rem 2rem 6rem;
+        h3{
+          font-size: 1.8rem;
+          letter-spacing: 0.3rem;
+        }
+
+        a{
+            color: $color2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        span{
+          font-size: 1.4rem;
+        }
+
+        .about-me-study-badge{
+          display: inline-block;
+          background-color: $color2;
+          padding: 0.2rem 0.6rem;
+          margin-top: 1rem;
+          border-radius: 0.5rem;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+}
+
+
+@media (max-width: $break-point-middle)  {
+  .about-me-studies{
+    width: $small-width;
+    min-width: $small-min-width;
+  }
+  .about-me-study{
+    .about-me-study-description {
+      h3 {
+        font-size: 1.4rem !important;
+        letter-spacing: normal !important;
+      }
+      a{
+        display: inline-block;
+        font-size: 1.4rem !important;
+      }
+      span{
+        font-size: 1.2rem !important;
+      }
+
+      .about-me-study-badge{
+
+      }
+    }
+
+  }
+
+}

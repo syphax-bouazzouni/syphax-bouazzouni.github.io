@@ -1,0 +1,23 @@
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-rounded-image',
+  templateUrl: './rounded-image.component.html',
+  styleUrls: ['./rounded-image.component.scss']
+})
+export class RoundedImageComponent implements OnInit {
+  @Input()
+  imgSource: String="";
+  @Input()
+  description: String="image";
+  @Input()
+  name: String="";
+  @Input()
+  styleInput={};
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

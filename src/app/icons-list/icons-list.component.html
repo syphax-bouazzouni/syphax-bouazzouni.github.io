@@ -1,0 +1,13 @@
+<div class="icons">
+  <div *ngFor="let icon of icons" class="icon">
+    <a href="{{icon.link}}" >
+      <figure>
+        <img src="{{icon.imgSource}}" alt="{{icon.name}}">
+        <figcaption>
+          <h3>{{icon.name}}</h3>
+        </figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+

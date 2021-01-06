@@ -1,0 +1,7 @@
+<div class="menu-btn-container">
+  <a [class.menu-btn-left]="direction=='left'"
+     [class.menu-btn-right]="direction=='right'"
+     class="menu-btn"
+     [style]="'animation-delay:'+animationDelay+'s'"
+     [routerLink]="route"><span>{{text}}</span></a>
+</div>

@@ -1,0 +1,63 @@
+@import "../vars";
+:host{
+  margin: 2px;
+}
+
+:host(.small){
+  .icon{
+    img {
+      width: 30px!important;
+      height: 30px!important;
+    }
+    figcaption {
+      display: none;
+    }
+  }
+
+}
+.icons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon{
+  margin: 3px;
+  text-align: center;
+  img{
+    margin: 2px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+
+  figcaption {
+    opacity: 0;
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease-out;
+
+    h3{
+      color: $off-white;
+    }
+  }
+  figure:hover figcaption {
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: $break-point) {
+  .icon{
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    figcaption{
+      font-size: 1.2rem;
+    }
+  }
+}

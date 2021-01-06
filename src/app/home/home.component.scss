@@ -1,0 +1,33 @@
+@import "src/app/vars";
+@import "src/app/animations";
+
+
+:host{
+  height: 100vh;
+}
+.home{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &:before{
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+    display: block;
+    position: fixed;
+
+    background-color: $color2;
+
+
+    clip-path: ellipse(50vw 40vh at 50% 50%);
+    transform: scale(2) translate(27vw,-18vh) rotate(335deg);
+    @extend .circle-left-right-animation
+  }
+}
+
+
+.circle-left-right-animation{
+  animation: 1s ease-in-out  both leftToRight;
+}

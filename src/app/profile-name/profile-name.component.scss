@@ -1,0 +1,93 @@
+@import "src/app/vars";
+@import "src/app/animations";
+
+:host(.drop){
+  @extend .profile-name-animation-drop
+}
+:host(.fade){
+  @extend .profile-name-animation-fade
+}
+
+.profile-name{
+  padding-top: .6rem;
+  .profile-name-underlines{
+    &::before{
+      @extend .profile-name-underlines-line;
+      margin-bottom: 2px;
+      right: 1rem;
+    }
+    &::after{
+      @extend .profile-name-underlines-line;
+      left: 1rem;
+    }
+  }
+  &:hover{
+    .profile-name-underlines{
+      &::before{
+        right: -1rem ;
+      }
+      &::after{
+
+        left: -1rem;
+      }
+    }
+  }
+}
+
+:host(.simple){
+  .profile-name-text{
+    @extend .profile-name-text_simple
+  }
+}
+
+:host(.backgrounded){
+  .profile-name-text{
+    @extend .profile-name-text_backgrounded
+  }
+}
+
+.profile-name-underlines-line{
+  transition: 0.3s all ease-in-out;
+  content:'';
+  display: block;
+  position: relative;
+  border: 1px solid $color1;
+  width: 100%;
+}
+
+.profile-name-text{
+  color: $text-color;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: center;
+}
+.profile-name-text_simple{
+
+  font-size: 2.4rem;
+  font-weight: 700;
+
+
+  letter-spacing: .4rem;
+  word-spacing: .2rem;
+
+}
+
+.profile-name-text_backgrounded{
+  letter-spacing: .2rem;
+  background-color: $color1;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  border-radius: 100rem;
+  padding: .2rem 2rem;
+  margin-bottom: .8rem;
+}
+
+.profile-name-animation-fade{
+  animation: 1s ease-in .8s both fadeIn ;
+}
+
+.profile-name-animation-drop{
+  animation: 1s ease-in .8s both dropIn ;
+}

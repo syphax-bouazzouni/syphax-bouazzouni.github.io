@@ -1,0 +1,86 @@
+@import "src/app/vars";
+@import "src/app/animations";
+
+:host{
+  width: 100%;
+}
+
+.about-me-card{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  min-height: 90vh;
+
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-radius: 5px;
+  box-shadow: 12px 11px 14px 0 rgba(0,0,0,.36);
+  background-color: $color2;
+  animation: 1s ease-in-out both dropIn;
+
+}
+
+.about-me-top-header{
+  margin-bottom: 1rem;
+  width: 100%;
+  position: relative;
+
+  .square{
+    position: absolute;
+    height: 90%;
+    top: 20%;
+    width: inherit;
+    background-color: $color1;
+    clip-path: polygon(0 30%, 100% 0%, 100% 70%, 0 100%);
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      background: rgba(255,255,255,0.5);
+      width: 150px;
+      height: 100%;
+      left: 0;
+      top: 0;
+      transition: 1s ease-in-out;
+      animation: shine 5s infinite 5s;
+      transform: translateX(-200px)  skewX(15deg);
+
+    }
+  }
+}
+
+.about-me-body{
+  padding: 1rem 6rem;
+  .bio{
+    color: $text-color;
+    font-size: 1.6rem;
+    margin: 1rem .4rem;
+    line-height: 1.2;
+    font-weight: lighter;
+    text-align: center;
+    word-spacing: 1px;
+    @extend .bio-animation;
+  }
+}
+
+
+
+.bio-animation{
+  animation: 1s ease-in .8s both dropIn;
+}
+
+@media(max-width: 460px) {
+  .about-me-card{
+    width: $small-width;
+    min-width: $small-min-width;
+  }
+  .about-me-card-body{
+    padding: 2rem 4rem;
+  }
+  .bio{
+    font-size: 1.4rem;
+  }
+}
+

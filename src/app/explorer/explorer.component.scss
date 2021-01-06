@@ -1,0 +1,108 @@
+@import "src/app/vars";
+@import "src/app/animations";
+.explorer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+
+
+.explorer-path{
+  height: 100%;
+  position: relative;
+
+
+  .explorer-line{
+    background-color:$color1;
+    box-shadow: 7px 5px 8px 0 rgba(0,0,0,.31);
+    width:1.6rem;
+    height: 100%;
+    z-index: 1;
+    @extend .explorer-line-animation;
+  }
+
+  .explorer-line-dots {
+    position: absolute;
+    top: 3.5rem;
+    left: -3.5rem;
+    background-color: $color1;
+    padding: 0.7rem;
+
+    width: 8.5rem;
+    height: 3rem;
+    display:flex ;
+    vertical-align: center;
+    text-decoration:none;
+
+    border: none;
+    text-align: center;
+    border-radius: 100rem;
+    box-shadow: 13px 0 20px 0 rgba(0, 0, 0, .2);
+
+    transition: all 0.5s linear;
+    @extend .explorer-line-dots-animation;
+    &::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+      height: 0.8rem;
+      width: 0.8rem;
+      top: 40%;
+      left: 46%;
+      border-radius: 50%;
+      background-color: $color2;
+      box-shadow: 2rem 0 0 $color2, -2rem 0 0 $color2;
+      transition: all 0.3s ease-in-out;
+    }
+
+    span{
+      display: inline-block;
+      width: 0;
+      overflow: hidden;
+      color: $text-color;
+      font-size: 1.2rem;
+      transition: all 0.2s ease-in-out;
+      white-space: nowrap;
+      font-weight: bold;
+
+    }
+
+
+    &:hover{
+      left: -6.2rem;
+      width: 14rem;
+      background: $color3;
+
+      &::after{
+        box-shadow: 0 0 0 $color2, 0 0 0 $color2;
+        background:none;
+        content: "\21E9";
+        font-size: 1.8rem;
+        color: white;
+        top: 100%;
+      }
+      span{
+        width: 100%;
+
+      }
+
+
+    }
+
+  }
+}
+
+
+
+
+.explorer-line-animation{
+  animation: 1s ease-in-out 1.9s both scaleInTop;
+}
+.explorer-line-dots-animation{
+  animation: 1s ease-in-out 2s both fadeIn;
+}
+

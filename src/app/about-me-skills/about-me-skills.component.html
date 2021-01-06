@@ -1,0 +1,8 @@
+<div class="about-me-skills">
+  <h1>Skills</h1>
+  <div *ngFor="let s of skills" class="about-me-skill">
+    <h2>{{s.title}}</h2>
+    <p class="about-me-skill-techs">{{s.techs.join(' , ')}}</p>
+  </div>
+
+</div>

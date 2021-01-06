@@ -1,0 +1,54 @@
+@import "src/app/vars";
+@import "src/app/animations";
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  font-size: 1.6rem;
+  color: $off-white;
+  margin: 5% 0;
+}
+
+.profile-jobs{
+  padding: 1.6rem;
+  font-weight: 400;
+  @extend .profile-jobs-animation
+}
+
+.profile-description{
+  font-family: 'Cormorant Garamond' ,serif;
+  padding: 0 1rem 1rem;
+  font-size: 1.8rem;
+  @extend .profile-description-animation
+}
+
+
+
+.profile-img-animation {
+  animation: 1s ease-in-out .5s normal both dropIn;
+}
+
+.profile-description-animation{
+  animation: 1s ease-in .7s both fadeIn;
+}
+
+.profile-jobs-animation{
+  animation: 1s ease-in .6s both fadeIn;
+}
+
+
+@media (max-width:450px) {
+  .profile{
+    font-size: 1.4rem;
+  }
+
+  .profile-jobs{
+    padding: 1rem;
+  }
+
+  .profile-description{
+    font-size: 1.6rem;
+  }
+}

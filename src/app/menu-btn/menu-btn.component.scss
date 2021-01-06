@@ -1,0 +1,93 @@
+@import "src/app/vars";
+
+.menu-btn-container{
+  display: flex;
+}
+.menu-btn {
+  display: inline-block;
+  min-width: 80vw;
+  font-size: 1.4rem;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background-color: $color2;
+  color: $text-color;
+  border-radius: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  span {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(0.4rem);
+  }
+
+}
+
+.menu-btn-direction{
+  content: '\00bb';
+  display: inline-block;
+  font-size: 2.5rem;
+  vertical-align: middle;
+  position: relative;
+  line-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.menu-btn-right{
+  transform: translateX(25%);
+  @extend .btn-slide-in-right;
+  span:after {
+    @extend .menu-btn-direction;
+    top: -3px;
+    right: -4px;
+    transform: translateX(3.2rem)
+  }
+  &:hover{
+    background-color: $color3;
+    span::after{
+      transform:translateX(0);
+      opacity: 1;
+    }
+    span{
+      transform: translateX(-0.4rem);
+    }
+  }
+}
+
+.menu-btn-left{
+  transform: translateX(-25%);
+  @extend .btn-slide-in-left;
+  span:before{
+    @extend .menu-btn-direction;
+    top: 3px;
+    left: -4px;
+    transform: translateX(-3.2rem) rotate(180deg);
+  }
+  &:hover{
+    background-color: $color3;
+    span::before{
+      transform:translateX(0) rotate(180deg);
+      opacity: 1;
+    }
+    span{
+      transform: translateX(1.4rem) ;
+    }
+  }
+}
+
+
+.btn-slide-in-right {
+  animation: slideInRight 0.5s both;
+}
+.btn-slide-in-left {
+  animation: slideInLeft 0.5s both;
+}
+
+@for $i from 1 through 3 {
+  .delay-#{$i}{
+    animation-delay: (0.5+$i/10)s;
+  }
+}

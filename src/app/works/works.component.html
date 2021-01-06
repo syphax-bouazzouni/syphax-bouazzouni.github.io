@@ -1,0 +1,25 @@
+<div class="works">
+  <app-back-icon></app-back-icon>
+  <div class="works-header">
+    <div class="works-header-information" #worksInformation>
+      <app-profile-image [width]="width" [height]="height" [borderWidth]="borderWidth"></app-profile-image>
+      <div class="works-header-information-text">
+        <app-typing-text
+          [textToDisplay]="textToDisplay">
+        </app-typing-text>
+
+      </div>
+    </div>
+    <div [class.works-header-fixed]="headerFixed">
+      <h1>PORTFOLIO</h1>
+      <app-work-skills (skillSelected)="onSkillSelected($event)"></app-work-skills>
+    </div>
+  </div>
+
+  <div class="works-list" [class.margin-top]="headerFixed">
+
+    <div style="height: 20vh ; background-color: #db381b"></div>
+  </div>
+
+</div>
+

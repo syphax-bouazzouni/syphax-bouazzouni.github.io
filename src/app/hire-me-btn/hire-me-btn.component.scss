@@ -1,0 +1,56 @@
+@import "src/app/vars";
+@import "src/app/animations";
+
+.hire-me-btn{
+  min-width: 15rem;
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background-color: $color1;
+  color: $text-color;
+  border: none;
+  border-radius: 100rem;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  font-weight: bold;
+  font-family: 'Open Sans',sans-serif;
+
+  transition: all 0.3s ease-in-out;
+  @extend  .hire-me-btn-animation;
+  span::after{
+    content:'\00bb';
+    display: inline-block;
+    font-size: 2.5rem;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+    right: -4px;
+    line-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(3.2rem)
+  }
+  span{
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(0.4rem);
+  }
+
+  &:hover{
+    background-color: $color3;
+    span::after{
+      transform:translateX(0);
+      opacity: 1;
+    }
+    span{
+      transform: translateX(-0.4rem);
+    }
+  }
+
+}
+
+.hire-me-btn-animation{
+  animation: pulse 2s infinite,1s ease-in .9s both fadeIn ;
+}
+

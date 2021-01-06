@@ -1,0 +1,67 @@
+@import "../vars";
+
+
+
+:host(.small){
+  .img {
+    width: 60px;
+    height: 60px;
+    border: 0.4rem solid $color2;
+  }
+
+}
+
+.img{
+  position: relative;
+  width:140px;
+  height:140px;
+  border: .8rem solid $color1;
+  border-radius:50%;
+  transition: all .5s ease-in-out;
+
+  &:hover{
+    transform: rotateY(180deg);
+    border: .8rem solid $color3;
+    .img-face{
+      opacity: 0;
+    }
+    .img-behind{
+      opacity: 1;
+    }
+  }
+
+  .img-face{
+    height: 100%;
+    width: 100%;
+    border-radius:50%;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+
+  }
+  .img-behind{
+    font-size: 1.6rem;
+    color: $off-white;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    background-color: $color1;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    text-align: center;
+    top: 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: rotateY(180deg);
+  }
+}
+
+@media (max-width: $break-point) {
+  .img-behind{
+    font-size: 1.2rem !important;
+  }
+}

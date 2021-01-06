@@ -1,0 +1,5 @@
+@import "../animations";
+.cursor__animate{
+  display: inline-block;
+  animation: .8s cubic-bezier(1,-.18,0,1.35) .5s infinite fadeInOut;
+}

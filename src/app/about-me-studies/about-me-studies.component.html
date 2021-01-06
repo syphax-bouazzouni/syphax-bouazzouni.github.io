@@ -1,0 +1,28 @@
+<div class="about-me-studies">
+  <h1>Studies</h1>
+
+  <div *ngFor="let s of studies"  class="about-me-study">
+    <h2>From {{s.startDay | date:"MMM y"}} to {{s.endDate|date:"MMM y"}}</h2>
+    <div class="about-me-study-body">
+      <app-rounded-image name="{{s.name}}"
+                         description="{{s.name}} logo"
+                         imgSource="{{s.logoSrc}}"
+                         class="small about-me-study-logo">
+
+      </app-rounded-image>
+      <div  class="about-me-study-description">
+        <h3>{{s.title}}</h3>
+        <div>
+          <span>
+             <a href="{{s.link}}">
+                  {{s.fullName}}
+            </a>
+          </span>
+          <span>{{s.address}}</span>
+        </div>
+        <div *ngFor="let b of s.badges" class="about-me-study-badge">{{b}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>

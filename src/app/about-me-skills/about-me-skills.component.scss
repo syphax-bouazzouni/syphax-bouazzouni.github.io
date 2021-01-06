@@ -1,0 +1,34 @@
+@import "../vars";
+
+:host{
+  width: 100%;
+}
+
+.about-me-skills{
+  @extend .about-me-part;
+
+
+  .about-me-skill{
+    h2{
+      margin: 2rem 0 1rem;
+      letter-spacing: 2px;
+      padding-bottom: 0;
+      font-size: 1.6rem;
+      border-bottom: 2px solid $off-white;
+      width: 75%;
+    }
+
+    .about-me-skill-techs{
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+
+}
+
+@media (max-width: $break-point-middle)  {
+  .about-me-skills{
+     width: $small-width;
+    min-width: $small-min-width;
+  }
+}

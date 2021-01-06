@@ -1,0 +1,14 @@
+<div class="profile">
+  <div class="profile-img-animation">
+      <app-profile-image></app-profile-image>
+  </div>
+
+  <div class="profile-jobs">
+      {{profile.jobs.join(" | ")}}
+  </div>
+
+  <div class="profile-description">
+    <blockquote>{{profile.description}}</blockquote>
+  </div>
+
+</div>
