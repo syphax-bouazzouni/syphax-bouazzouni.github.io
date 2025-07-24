@@ -1,4 +1,4 @@
-# syphax-bouazzouni.github.io
+# Syphax Bouazzouni's Portfolio
 
 Personal portfolio website for Syphax Bouazzouni, built with [Vite](https://vitejs.dev/) and React.
 
