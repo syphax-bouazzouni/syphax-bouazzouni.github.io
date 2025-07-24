@@ -8,7 +8,6 @@ Personal portfolio website for Syphax Bouazzouni, built with [Vite](https://vite
 - 🛠️ Built with React + TypeScript
 - 🐳 Dockerized for easy deployment
 - 🔄 GitHub Actions for CI/CD
-- 🧩 Modular and easily customizable
 
 ## Getting Started
 
@@ -76,4 +75,3 @@ This project uses GitHub Actions to build and push the Docker image to Docker Hu
 ## License
 
 MIT
-
