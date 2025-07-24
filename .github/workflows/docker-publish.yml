@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build, Tag, and Push Docker Image
 
 on:
   push:
@@ -28,3 +28,27 @@ jobs:
           context: .
           push: true
           tags: syphax0/syphax-perso:latest
+
+      - name: Get next release tag
+        id: get_tag
+        run: |
+          latest_tag=$(git tag --sort=-v:refname | head -n 1)
+          if [[ $latest_tag =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+            IFS='.' read -r major minor patch <<< "${latest_tag:1}"
+            next_tag="v$major.$minor.$((patch+1))"
+          else
+            next_tag="v1.0.0"
+          fi
+          echo "next_tag=$next_tag" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release Tag
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tag = process.env.next_tag || '${{ steps.get_tag.outputs.next_tag }}';
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${tag}`,
+              sha: context.sha
+            });
