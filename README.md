@@ -72,6 +72,3 @@ This project uses GitHub Actions to build and push the Docker image to Docker Hu
 - `Dockerfile` - Docker build instructions
 - `docker-compose.yml` - Docker Compose setup
 
-## License
-
-MIT
